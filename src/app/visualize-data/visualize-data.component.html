@@ -1,0 +1,19 @@
+<div class="custom-select">
+    <mat-form-field appearance="fill" style="padding: 8px 8px 0 8px;">
+        <mat-label>Select Column Name</mat-label>
+        <mat-select name="col" [(ngModel)]="currentColName" (selectionChange)="selectionChanged()">
+            <mat-option [value]="colName" *ngFor="let colName of columnNames">{{colName}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" style="padding: 8px 8px 0 8px;">
+        <mat-label>Select Year</mat-label>
+        <mat-select name="fiscalYear" [(ngModel)]="selectedYear" (selectionChange)="selectionChanged()">
+            <mat-option [value]="year" *ngFor="let year of years">{{year}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
+
+<div class="custom-div" *ngIf="!selectedYear || !currentColName">Please select valid Year and type</div>
+
+<div id="main"></div>
